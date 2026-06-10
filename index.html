@@ -1,126 +1,184 @@
-<!DOCTYPE html> <!-- Define que este documento é do tipo HTML5 -->
-<html lang="pt-br"> <!-- Declara o início do documento HTML e define o idioma principal como Português do Brasil -->
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog de tecnologia</title>
 
-<head> <!-- Contém metadados, configurações da página e links externos que não aparecem diretamente na tela -->
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 (permite acentos e caracteres especiais) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garante a responsividade, ajustando o layout ao tamanho da tela do dispositivo -->
-    <title>Blog</title> <!-- Define o título que aparece na aba do navegador -->
-   
-    <style> /* Início do bloco de estilização CSS interno */
-       
-        /* Estiliza o cabeçalho da página */
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #183C63;
+        }
+
         header {
-            background-color: #183C63; /* Define a cor de fundo azul */
-            color: #FFFFFF;            /* Define a cor do texto como branco */
-            text-align: center;        /* Alinha o texto no centro */
-            max-width: 800px;          /* Define a largura máxima de 800 pixels */
-            margin: 0 auto;            /* Centraliza o cabeçalho horizontalmente na tela */
-            padding: 16px;             /* Adiciona espaçamento interno de 16 pixels */
+            background-color: #183C63;
+            color: #fff;
+            text-align: center;
+            padding: 24px 16px;
         }
 
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
 
-        /* Estiliza a área de conteúdo principal */
+        header p {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
         main {
-            background-color: #FFFFFF; /* Define a cor de fundo branca */
-            color: #183C63;            /* Define a cor do texto como azul */
-            max-width: 800px;          /* Define a largura máxima de 800 pixels */
-            margin: 0 auto;            /* Centraliza o conteúdo principal horizontalmente */
-            padding: 16px;             /* Adiciona espaçamento interno de 16 pixels */
+            max-width: 800px;
+            margin: 24px auto;
+            padding: 0 16px;
         }
-       
-        /* Estiliza cada bloco de post do blog */
+
         article {
-            display: flex;             /* Define o layout flexbox para alinhar os itens (imagem e texto) lado a lado */
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-
-        /* Estiliza as imagens dos artigos */
-        img {
-            width: 80px;               /* Define a largura fixa de 80 pixels */
-            height: 80px;              /* Define a altura fixa de 80 pixels */
+        article img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
+        article div {
+            flex: 1;
+        }
 
-        /* Classe para estilizar o nome do autor do artigo */
+        article h2 {
+            margin-bottom: 8px;
+            color: #183C63;
+        }
+
         .artigo-autor {
-            font-weight: bold;         /* Deixa o texto em negrito */
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
         }
-    </style> /* Fim do bloco de estilização CSS */
+
+        article p {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #e0e0e0;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0c0c0;
+        }
+
+        button span {
+            margin-left: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            article {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            article img {
+                margin-bottom: 12px;
+            }
+
+            article div {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-
-<body> <!-- Início do corpo do documento, onde fica todo o conteúdo visível para o usuário -->
-   
-    <header> <!-- Seção do topo da página (cabeçalho) -->
-        <h1>Meu blog tech</h1> <!-- Título principal do blog -->
-        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p> <!-- Descrição do cabeçalho -->
+<body>
+    <header>
+        <h1>Meu blog de tecnologia</h1>
+        <p>Dicas, curiosidades e novidades do mundo tech!</p>
     </header>
-   
-    <main> <!-- Área onde ficam os posts principais do blog -->
-       
-        <article> <!-- Primeiro artigo do blog -->
-            <!-- Tag de imagem com origem (src) e texto descritivo de acessibilidade (alt) -->
-            <img src="images.jpeg"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
-            <div> <!-- Divisor ou container para agrupar os textos ao lado da imagem -->
-                <h2>Meu primeiro post</h2> <!-- Título do post -->
-                <p class="artigo-autor">Por: Marcelo Paludetto</p> <!-- Autor com a classe de estilo em negrito -->
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p> <!-- Conteúdo do post -->
-                <button>❤️ <span>0</span></button> <!-- Botão de curtir (coração) com contador interno -->
-                <button>👍 <span>0</span></button> <!-- Botão de joinha com contador interno -->
-            </div>
-        </article>
-       
-        <article> <!-- Segundo artigo do blog -->
-            <img src="images.jpeg"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+
+    <main>
+        <article>
+            <img src="images.jpeg" alt="Computador e código representando programação">
             <div>
-                <h2>Meu segundo post</h2>
+                <h2>Introdução à Inteligência Artificial</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p>A inteligência artificial (IA) está transformando o mundo da tecnologia. Neste post, vamos explorar
+                    os conceitos básicos, aplicações e impactos da IA no dia a dia.</p>
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
         </article>
-       
+
+        <article>
+            <img src="images.jpeg" alt="Dispositivo de realidade virtual com ícones de tecnologia ao redor">
+            <div>
+                <h2>As tendências da Realidade Virtual</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>A Realidade Virtual (VR) está cada vez mais presente em jogos, educação e empresas. Descubra como a VR
+                    está mudando a forma como interagimos com o digital.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <article>
+            <img src="images.jpeg" alt="Código em tela de computador representando programação">
+            <div>
+                <h2>Dicas de programação para iniciantes</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Se você está começando a programar, confira algumas dicas essenciais para evoluir mais rápido,
+                    evitar erros comuns e se manter motivado no aprendizado de programação.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
     </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(botao => {
+            let curtiu = false;
+            botao.addEventListener("click", () => {
+                let span = botao.querySelector("span");
+                if (!curtiu) {
+                    span.textContent = parseInt(span.textContent) + 1;
+                    curtiu = true;
+                } else {
+                    span.textContent = parseInt(span.textContent) - 1;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 </body>
 
-
-<script> /* Início do bloco de programação JavaScript */
-   
-    // Seleciona todos os elementos <button> da página e os armazena na constante "botoes"
-    const botoes = document.querySelectorAll("button");
-
-
-    // Percorre cada botão encontrado na página
-    botoes.forEach(function (botao) {
-        let curtiu = false; // Cria uma variável de controle para saber se o botão atual está ativo (curtido)
-       
-        // Adiciona um ouvinte para o evento de clique, chamando a função "botaoClicado" quando acionado
-        botao.addEventListener("click", botaoClicado);
-       
-        // Função executada sempre que um botão é clicado
-        function botaoClicado() {
-            console.log("fui clicado"); // Registra uma mensagem informativa no console do desenvolvedor
-           
-            let texto = botao.querySelector("span"); // Seleciona a tag <span> de dentro do botão clicado
-           
-            // Verifica o estado atual de curtida
-            if (curtiu === false) {
-                texto.textContent++; // Incrementa o número no span se ainda não tiver curtido
-                curtiu = true;       // Altera o estado de controle para true (marcado como curtido)
-            } else {
-                texto.textContent--; // Decrementa o número no span se o usuário clicar de novo para descurtir
-                curtiu = false;      // Retorna o estado de controle para false
-            }
-        }
-    })
-
-
-</script> /* Fim do bloco de programação JavaScript */
-
-
-</html> <!-- Fim do documento HTML -->
-
+</html>
